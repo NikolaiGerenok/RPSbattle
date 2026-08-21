@@ -1,0 +1,39 @@
+# Unreal Engine
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+FileOpenOrder/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.sdf
+*.opensdf
+*.opendb
+*.vcxproj.user
+*.code-workspace
+
+# Generated project files (regenerate from .uproject)
+*.sln
+*.slnx
+*.vcxproj
+*.vcxproj.filters
+*.xcodeproj
+*.xcworkspace
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Crash dumps
+*.dmp
+*.log
