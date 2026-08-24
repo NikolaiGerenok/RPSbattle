@@ -13,6 +13,8 @@ class ACombatEncounter : public AActor
     public:
     ACombatEncounter();
 
+    virtual void BeginPlay() override;
+
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     AActor* TestEnemy;
 
