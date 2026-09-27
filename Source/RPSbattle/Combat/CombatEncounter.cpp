@@ -23,6 +23,7 @@ void ACombatEncounter::BeginPlay()
 
 void ACombatEncounter::ChooseGesture(ERPSGesture Gesture)
 {
+	if (Phase == ECombatPhase::Ended) return;
 	if (TestHero == nullptr)
 	{
 		APlayerController* PC = GetWorld()->GetFirstPlayerController();
@@ -69,6 +70,11 @@ void ACombatEncounter::ChooseGesture(ERPSGesture Gesture)
 	{
 		AttackerCombat->ApplyDamage(DefenderCombat->BaseDamage * Result.DamageMultiplier);
 	}
-
-	IsHeroTurn = !IsHeroTurn;
+	if (AttackerCombat->IsDead() || DefenderCombat->IsDead()) 
+	{
+		Phase = ECombatPhase::Ended;
+	}else
+	{
+		IsHeroTurn = !IsHeroTurn;
+	}
 }

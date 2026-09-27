@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "RPSTypes.h"
+#include "CombatPhase.h"
 #include "CombatEncounter.generated.h"
 
 UCLASS()
@@ -23,6 +24,9 @@ class ACombatEncounter : public AActor
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     bool IsHeroTurn = true;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat")
+    ECombatPhase Phase = ECombatPhase::TurnIdle;
 
     UFUNCTION(BlueprintCallable,Category = "Combat")
     void ChooseGesture(ERPSGesture Gesture);
